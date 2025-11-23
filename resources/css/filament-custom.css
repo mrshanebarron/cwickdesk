@@ -1,0 +1,24 @@
+/*
+ * CwickDesk Filament UI Customizations
+ */
+
+/* Softer corners on most elements */
+:root {
+    --f-border-radius-lg: 0.75rem;
+}
+
+/* Add a subtle gradient to the sidebar for depth */
+.fi-sidebar {
+    background-image: linear-gradient(to top, rgb(255 255 255 / 0.05), rgb(255 255 255 / 0));
+}
+
+/* Improve button appearance */
+.fi-btn {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.fi-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
