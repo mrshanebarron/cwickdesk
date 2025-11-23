@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    {{-- Theme initialization - MUST be first script to prevent flash --}}
+    <script>
+        // Apply dark class immediately
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else if (savedTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            // No saved preference - default to dark
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'IT Help Desk Portal') - CwickDesk</title>
-
-    {{-- Theme initialization - runs immediately before page renders --}}
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-            }
-        })();
-    </script>
 
     @vite(['resources/css/public.css', 'resources/js/app.js'])
 
