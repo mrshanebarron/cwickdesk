@@ -17,7 +17,7 @@
                         </svg>
                     </div>
                 </div>
-                <h1 class="font-display text-3xl font-bold">Welcome Back</h1>
+                <h1 class="font-display text-3xl font-bold text-slate-900 dark:text-white">Welcome Back</h1>
                 <p class="text-slate-600 dark:text-slate-400 mt-2">Sign in to your account</p>
             </div>
 
