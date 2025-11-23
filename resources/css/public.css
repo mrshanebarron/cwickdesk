@@ -28,6 +28,24 @@ body {
 }
 
 /* ========================================
+   Dark Mode Global Overrides
+   ======================================== */
+
+/* Override slate text colors in dark mode to be light instead of dark */
+html.dark .text-slate-900:not(.dark\:text-white):not(.dark\:text-slate-300):not(.dark\:text-slate-400) {
+  color: rgb(241 245 249) !important;
+}
+html.dark .text-slate-800:not(.dark\:text-white):not(.dark\:text-slate-300):not(.dark\:text-slate-400) {
+  color: rgb(226 232 240) !important;
+}
+html.dark .text-slate-700:not(.dark\:text-slate-300):not(.dark\:text-slate-400) {
+  color: rgb(203 213 225) !important;
+}
+html.dark .text-slate-600:not(.dark\:text-slate-400) {
+  color: rgb(148 163 184) !important;
+}
+
+/* ========================================
    Animated Gradient Backgrounds
    ======================================== */
 
