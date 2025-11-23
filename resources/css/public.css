@@ -1,11 +1,9 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 /* ========================================
    CwickDesk Public Pages - Award-Worthy Design
    ======================================== */
-
-@import "tailwindcss";
-
-/* Custom Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @theme {
   --color-primary: 59 130 246;
