@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'IT Help Desk Portal') - CwickDesk</title>
 
-    {{-- Theme initialization script - MUST run before any styles --}}
+    {{-- Theme initialization - runs immediately before page renders --}}
     <script>
-        // Initialize theme immediately - before any rendering
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        } else {
-            // Default to dark, ensure dark class is present
-            document.documentElement.classList.add('dark');
-            if (!savedTheme) {
-                localStorage.setItem('theme', 'dark');
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
             }
-        }
+        })();
     </script>
 
-    @vite(['resources/css/public.css'])
+    @vite(['resources/css/public.css', 'resources/js/app.js'])
 
     @stack('styles')
 </head>
